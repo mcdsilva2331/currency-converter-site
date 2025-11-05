@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câmbio Global PRO - Bandeiras em Tudo</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flagpack@1.0.0/dist/flagpack.css"
+    />
+  </head>
+  <body>
+    <div id="themeToggle">Moon</div>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <h3>Login</h3>
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="E-mail"
+          value="admin@cambio.com"
+        />
+        <input
+          type="password"
+          id="loginPass"
+          placeholder="Senha"
+          value="123456"
+        />
+        <button id="loginSubmit">Entrar</button>
+        <p><small>Teste: admin@cambio.com / 123456</small></p>
+      </div>
+    </div>
+
+    <header>
+      <h1>Câmbio Global PRO</h1>
+      <p>30 Moedas com Taxas em Tempo Real</p>
+      <div id="userInfo" style="display: none; color: #ccc; font-size: 0.9rem">
+        Olá, <span id="userName"></span> | <a href="#" id="logoutLink">Sair</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="converter">
+        <h2>Conversor Rápido</h2>
+        <div class="inputs">
+          <input
+            type="number"
+            id="amount"
+            placeholder="Valor"
+            value="1"
+            min="0"
+          />
+          <select id="fromCurrency"></select>
+          <span>para</span>
+          <select id="toCurrency"></select>
+          <button id="convertBtn">Converter</button>
+        </div>
+        <div id="result"></div>
+        <div id="shareButtons" style="display: none; margin-top: 10px">
+          <button id="shareWhats" class="share-btn">WhatsApp</button>
+          <button id="shareEmail" class="share-btn">Email</button>
+        </div>
+      </section>
+
+      <section id="comparison">
+        <h2>Comparar com Todas</h2>
+        <button id="compareBtn">Gerar Tabela</button>
+        <table id="comparisonTable" style="display: none">
+          <thead>
+            <tr>
+              <th>Moeda</th>
+              <th>Taxa</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="chart-section">
+        <h2>Gráfico de Variação</h2>
+        <canvas id="rateChart"></canvas>
+      </section>
+
+      <section id="history">
+        <h2>Histórico</h2>
+        <ul id="historyList"></ul>
+        <button id="exportCSV">Exportar CSV</button>
+      </section>
+
+      <section id="alerts">
+        <h2>Alerta</h2>
+        <input type="text" id="alertInput" placeholder="Ex: USD/BRL > 5.80" />
+        <button id="setAlertBtn">Definir</button>
+        <p id="alertStatus"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Câmbio Global PRO. Taxas via ExchangeRate-API.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
